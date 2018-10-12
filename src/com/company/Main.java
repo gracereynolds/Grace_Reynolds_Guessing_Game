@@ -47,34 +47,47 @@ public class Main {
                 }
                 System.out.println("Is "+guess+" higher, lower, or correct?");
                 response = input.nextLine();
-                if(response.equals("higher"))
+                if(!response.equals("correct")&& min == max)
                 {
-                    min = guess + 1;
+                    System.out.println(name+", you cheater! I said pick a number from 1 to 10! If you can't play fair, then I win!");
+                    correct = true;
+                }
+                else if(response.equals("higher"))
+                {
+                    max = guess - 1;
                 }
                 else if(response.equals("lower"))
                 {
-                    max = guess - 1;
+                    min = guess + 1;
+                }
+                else
+                {
+                    correct = true;
+                    System.out.println("Yay! Thanks, "+name+", that was fun!");
                 }
             }
         }
     }
     private static int avg(int a, int b)
     {
-        int sum = 0;
-        for(int i = a; i <= b; i++)
-        {
-            sum+=i;
-        }
-        return sum/(b-a);
+        return (a+b)/2;
     }
     public static void main(String[] args) {
         System.out.println("What's your name?");
         name = input.nextLine();
-        System.out.println("Hello, "+name+". Who do you want to guess numbers? (Type 'me' or 'computer')");
+        System.out.println("Hi, "+name+", I'm Mike. Who do you want to guess numbers? (Type 'me' or 'mike')");
         String player = input.nextLine();
         if(player.equals("me"))
         {
             YouGuess();
+        }
+        else if(player.equals("mike"))
+        {
+            CompGuess();
+        }
+        else
+        {
+            System.out.println("Sorry, I didn't understand that. Please restart the program, and this time, remember that I'm case sensitive");
         }
     }
 }
