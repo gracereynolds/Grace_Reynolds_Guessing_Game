@@ -75,13 +75,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("What's your name?");
         name = input.nextLine();
-        System.out.println("Hi, "+name+", I'm Mike. Who do you want to guess numbers? (Type 'me' or 'mike')");
+        System.out.println("Hi, "+name+", I'm Myc. Who do you want to guess numbers? (Type 'me' or 'myc')");
         String player = input.nextLine();
         if(player.equals("me"))
         {
             YouGuess();
         }
-        else if(player.equals("mike"))
+        else if(player.equals("myc"))
         {
             CompGuess();
         }
